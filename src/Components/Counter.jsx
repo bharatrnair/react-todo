@@ -20,10 +20,10 @@ return(
          setCount(count-1)
       }}> - </button>
       <br />
-      <Button onClick={()=>{
+      <button onClick={()=>{
          navigate("/")
 
-      }}> Back</Button>
+      }}> Back</button>
       
    </div>
 )
