@@ -3,6 +3,7 @@ import Counter from "./Components/Counter";
 import Footer from "./Components/Footer";
 import { Route,Routes } from "react-router-dom";
 import Home from "./Components/Home";
+import Middle from "./Components/Middle";
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
         <Routes>
             <Route path="" element={<Home />} />
             <Route path="counter" element={<Counter value={10} />} />
+            <Route path ="middle" element={<Middle/>} />
             </Routes>
         <Footer year ={2022}/>
         </div>
