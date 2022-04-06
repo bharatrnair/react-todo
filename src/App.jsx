@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import { Route,Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Middle from "./Components/Middle";
+import End  from "./Components/last";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="" element={<Home />} />
             <Route path="counter" element={<Counter value={10} />} />
             <Route path ="middle" element={<Middle/>} />
+            <Route path ="last"   element={<End/>} />
             </Routes>
         <Footer year ={2022}/>
         </div>

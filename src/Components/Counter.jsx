@@ -1,10 +1,14 @@
 import {useState} from "react"
-import {Link} from "react-router-dom"
+import {Link ,useNavigate} from "react-router-dom"
+import image from "./../IMG_7253.JPG"
 
 const Counter =({value})=>{
+   const navigate =useNavigate();
 const [count,setCount] = useState(value);
 return(
-   <div>
+   <div style={{
+      backgroundImage: `url(${image})`
+   }}>
       <button
       onClick ={()=>{
          setCount(count+1)
@@ -16,7 +20,11 @@ return(
          setCount(count-1)
       }}> - </button>
       <br />
-      <Link to="/">Back</Link>
+      <Button onClick={()=>{
+         navigate("/")
+
+      }}> Back</Button>
+      
    </div>
 )
    }

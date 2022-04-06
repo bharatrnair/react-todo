@@ -6,6 +6,8 @@ const Home =()=>{
             <Link to="counter">Counter</Link>
             <br />
             <Link to="middle">Middle</Link>
+            <br />
+            <Link to="last">PageENd</Link>
         </div>
     )
 }

@@ -4,6 +4,7 @@ const Middle = () => {
         <div className="middle">
             <h1>HI</h1>
             <Link to = "/">Back</Link>
+            
         </div>
     )
 }
