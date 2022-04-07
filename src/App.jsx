@@ -5,20 +5,20 @@ import { Route,Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Middle from "./Components/Middle";
 import End  from "./Components/last";
+import Layout from "./Components/Layout";
+import Todo from "./Components/Todo";
 
 const App = () => {
     return (
-
-        <div className="container">
-        <Header title ="Todo" color ="red"/>
         <Routes>
-            <Route path="" element={<Home />} />
-            <Route path="counter" element={<Counter value={10} />} />
-            <Route path ="middle" element={<Middle/>} />
-            <Route path ="last"   element={<End/>} />
+            <Route path="" element={<Layout />} >
+                <Route path="" element={<Home />} />
+                <Route path="counter" element={<Counter value={10} />} />
+                <Route path ="middle" element={<Middle/>} />
+                <Route path ="last"   element={<End/>} />
+                <Route path ="todo"   element={<Todo/>} />
+            </Route>
             </Routes>
-        <Footer year ={2022}/>
-        </div>
         )
     }
 
