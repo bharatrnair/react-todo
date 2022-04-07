@@ -18,3 +18,9 @@ code {
 .Body{
   text-align: center;
 }
+.active{
+  color:green;
+}
+.notActive{
+  color:red;
+}

@@ -21,6 +21,25 @@ const Todo = () => {
                 {text:todo,status:true}
             ]
         }
+        updateData(data);
+    }
+
+
+    const switchActive =(id)=>{
+        const newList = todoList.map(todo => {
+            if(todo._id === id){
+                todo.status = !todo.status;
+            }
+            return todo;
+        });
+        let data ={
+            user:userName,
+            todos: newList
+        }
+        updateData(data);
+    }
+
+    const updateData = (data) =>{
         fetch(`http://192.168.1.48:8086/todos`,{
             method:'POST',
             headers:{
@@ -50,7 +69,9 @@ const Todo = () => {
                  <button onClick={addTodo}>Add</button>
             </div>
             {todoList.map(todo => (
-                <div key={todo.id} className={todo.status?"active":""}>
+                <div key={todo._id} className={todo.status?"active":"notActive"}
+                onClick={()=>switchActive(todo._id)}
+                >
                     <p>{todo.text}</p>
             </div>
             ))}
