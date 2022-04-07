@@ -3,6 +3,7 @@ import {useState} from 'react'
 const Todo = () => {
     const [userName,setUserName] = useState('');
     const [todoList,setTodoList] = useState([]);
+    const [todo,setTodo] = useState('');
     const loadData = () => {
         fetch(`http://192.168.1.48:8086/todos/${userName}`)
         .then(res => res.json())
@@ -12,6 +13,25 @@ const Todo = () => {
             alert("Invalid user name");
         });
     }
+    const addTodo =() =>{
+        let data={
+            user:userName,
+            todos:[
+                ...todoList,
+                {text:todo,status:true}
+            ]
+        }
+        fetch(`http://192.168.1.48:8086/todos`,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(data)
+          }).then(res => res.json())
+            .then(data => {
+                setTodoList(data.todos);
+            })
+        }
   return (
     <div>
         <header>
@@ -25,7 +45,7 @@ const Todo = () => {
             <div className="add-todo">
                 <input type="text"
                 value={todo}
-                onChange={(e)=>setTodoList(e.target.value)}
+                onChange={(e)=>setTodo(e.target.value)}
                  />
                  <button onClick={addTodo}>Add</button>
             </div>
