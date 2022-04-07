@@ -4,7 +4,7 @@ const Todo = () => {
     const [userName,setUserName] = useState('');
     const [todoList,setTodoList] = useState([]);
     const loadData = () => {
-        fetch(`https://192.168.1.48/${userName}`)
+        fetch(`http://192.168.1.48:8086/todos/${userName}`)
         .then(res => res.json())
         .then(data => {
             setTodoList(data.todos);
@@ -22,6 +22,13 @@ const Todo = () => {
                 </button>
         </header>
         <main>
+            <div className="add-todo">
+                <input type="text"
+                value={todo}
+                onChange={(e)=>setTodoList(e.target.value)}
+                 />
+                 <button onClick={addTodo}>Add</button>
+            </div>
             {todoList.map(todo => (
                 <div key={todo.id} className={todo.status?"active":""}>
                     <p>{todo.text}</p>
