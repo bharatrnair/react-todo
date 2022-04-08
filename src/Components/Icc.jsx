@@ -1,6 +1,7 @@
 import React from 'react'
 import Input from './Input'
 import image from './../icc.jpg'
+import svg1  from './../'
 
 
 const Icc = () => {
@@ -9,9 +10,7 @@ const Icc = () => {
     <div className="mainSection">
 
         <div className="leftSection">
-            <div className="svgorg">
             < Input placeholder="Organization Name" />
-            </div>
             < Input placeholder=" Email" />
             < Input placeholder="Phone Number" type='number'/>
             < Input placeholder="Address" />
