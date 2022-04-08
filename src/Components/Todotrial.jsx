@@ -1,29 +1,29 @@
 import {useState} from 'react'
 
-const Todo = () => {
+const Todotrial = () => {
     const [userName,setUserName] = useState('');
     const [todoList,setTodoList] = useState([]);
-    const [todo,setTodo] = useState('');
+    const [list,setList] = useState([]);
     const loadData = () => {
-        fetch(`http://192.168.1.48:8086/todos/${userName}`)
+        fetch(`http://192.168.48.1:8086/todos/${userName}`)
         .then(res => res.json())
         .then(data => {
             setTodoList(data.todos);
         }).catch(err =>{
             alert("Invalid user name");
-        });
+        })
     }
+
     const addTodo =() =>{
         let data={
             user:userName,
             todos:[
                 ...todoList,
-                {text:todo,status:true}
+                {text:list,status:true}
             ]
         }
-        updateData(data);
+        updateData(data)
     }
-
 
     const switchActive =(id)=>{
         const newList = todoList.map(todo => {
@@ -40,10 +40,10 @@ const Todo = () => {
     }
 
     const updateData = (data) =>{
-        fetch(`http://192.168.1.48:8086/todos`,{
+        fetch(`http://192.168.48.1:8086/todos`,{
             method:'POST',
-            headers:{
-                'Content-Type':'application/json'
+            headers:{ 
+                'content-type':'application/json'
             },
             body:JSON.stringify(data)
           }).then(res => res.json())
@@ -51,30 +51,36 @@ const Todo = () => {
                 setTodoList(data.todos);
             })
         }
+
+
+
+        
+
+
   return (
     <div>
         <header>
-            <input type="text" placeholder='user name' value={userName} onChange={(e)=>setUserName(e.target.value)}
+            <input type="text" placeholder='UserName' value={userName} onChange={(e)=>setUserName(e.target.value)}
             />
-            <button onClick={loadData}>
-                Submit
-                </button>
+            <button onClick={loadData}> 
+            Submit
+             </button>
         </header>
         <main>
             <div className="add-todo">
-                <input type="text"
-                value={todo}
-                onChange={(e)=>setTodo(e.target.value)}
-                 />
-                 <button onClick={addTodo}>Add</button>
+            <input type="text"
+            value={list}
+            onChange={(e)=>setList(e.target.value)}
+            />
+            <button onClick={addTodo}>Add</button>
             </div>
-            {todoList.map(todo => (
-                <div 
-                key={todo._id} 
-                className={todo.status?"active":"notActive"}
-                onClick={()=>switchActive(todo._id)}
-                >
-                    <p>{todo.text}</p>
+            {todoList.map(todo =>(
+            <div
+            key={todo._id}
+            className={todo.status ? "active" : "notActive"}
+            onClick={()=>switchActive(todo._id)}
+            >
+                <p>{todo.text}</p>
             </div>
             ))}
         </main>
@@ -82,4 +88,4 @@ const Todo = () => {
   )
 }
 
-export default Todo;
+export default Todotrial

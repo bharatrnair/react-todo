@@ -7,6 +7,8 @@ import Middle from "./Components/Middle";
 import End  from "./Components/last";
 import Layout from "./Components/Layout";
 import Todo from "./Components/Todo";
+import Todotrial from "./Components/Todotrial";
+import Icc from "./Components/Icc";
 
 const App = () => {
     return (
@@ -17,6 +19,8 @@ const App = () => {
                 <Route path ="middle" element={<Middle/>} />
                 <Route path ="last"   element={<End/>} />
                 <Route path ="todo"   element={<Todo/>} />
+                <Route path ="todotrial"  element={<Todotrial/>} />
+                <Route path ="icc" element={<Icc/>} />
             </Route>
             </Routes>
         )
