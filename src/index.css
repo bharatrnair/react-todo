@@ -21,16 +21,12 @@ code {
   color:red;
 }
 .inputBox{
-  /* padding-top: 100px; */
   padding : 20px;
    padding-left: 120px; 
-  /* margin-left: 60px;
-  margin-top: 20px; */
 }
 .leftSection{
   width: 50%;
   text-align: center;
-  padding-top:20px;
   box-sizing: border-box;
 
 }
@@ -43,13 +39,9 @@ code {
 .mainSection{
   display: grid;
   grid-template-columns: 50% 50%;
-  /* height: 861px; */
-/* width: 1230px; */
-/* left: 50px;
-top: 50px; */
-border-radius: 0px;
-margin-left:40px;
-background-color: white;
+  margin-left:60px;
+  background-color: white;
+  top: 50px;
 }
 .loginBox{
   background-color: #e6ebe7;
@@ -69,9 +61,6 @@ background-color: white;
   text-align: left;
 }
 button{
-  /* background-color: #20716A;
-  color: aliceblue;
-  margin-left: 500px; */
 width: 140px;
 height: 40px;
 left: 415px;
