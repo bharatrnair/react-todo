@@ -1,10 +1,22 @@
 import React from 'react'
 
-const InputField = ({type="text",label,icon=null,error=null,info=null}) => {
+const InputField = ({type="text", 
+label,
+icon=null,
+error=null,
+info=null,
+value,
+onChange
+}) => {
   return (
     <div className='input-field-container'>
         <div className="input-field">
-            <input type={type} />
+            <input
+             type={type} 
+             value={value} 
+             onChange={(e)=>onChange(e.target.value,e)}
+              />
+            {/* <input type={type} /> */}
             <label>{label}</label>
             { icon && <div className='input-field-icon' style={{
                 backgroundImage: `url(${icon})`,
