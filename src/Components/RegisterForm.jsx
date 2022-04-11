@@ -50,36 +50,42 @@ return (
         icon={EmailIcon}
         info="Email as per Records"
         error=""
+        value={email}
         onChange={(value)=>onChange("email",value)}
         />
          <InputField label={"Phone Number"} 
         icon={PhoneIcon}
         info="Phone Number as per Records"
         error=""
+        value={phone}
         onChange={(value)=>onChange("phone",value)}
         />
         <InputField label={"State"} 
         icon={StateIcon}
         info="State as per Records"
         error=""
+        value={state}
         onChange={(value)=>onChange("state",value)}
         />
         <InputField label={"City"} 
         icon={CityIcon}
         info="City as per Records"
         error=""
+        value={city}
         onChange={(value)=>onChange("city",value)}
         />
           <InputField label={"PinCode"} 
         icon={PinCodeIcon}
         info="PinCode as per Records"
         error=""
+        value={pinCode}
         onChange={(value)=>onChange("pinCode",value)}
         />
           <InputField label={"Address"} 
         icon={addressIcon}
         info="Address as per Records"
         error=""
+        value={address}
         onChange={(value)=>onChange("address",value)}
         />
 
