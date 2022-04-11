@@ -98,4 +98,8 @@ html,body,#root{
    right: 10px;
    cursor: pointer;
 }
+.error-text{
+    text-align: right;
+    color: rgb(168, 19, 19);
+}
 

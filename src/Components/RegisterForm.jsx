@@ -8,6 +8,7 @@ const RegisterForm = () => {
         <InputField label={"Organization Name"} 
         icon={OrgIcon}
         info="Organization Name as per Records"
+        error="Please enter a valid Organization Name"
         />
     </form>
 
