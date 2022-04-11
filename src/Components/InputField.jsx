@@ -16,8 +16,8 @@ onChange
              value={value} 
              onChange={(e)=>onChange(e.target.value,e)}
               />
-            {/* <input type={type} /> */}
-            <label>{label}</label>
+             {/* <input type={type} /> */}
+            <label className={value?"filled-label":""}>{label}</label>
             { icon && <div className='input-field-icon' style={{
                 backgroundImage: `url(${icon})`,
             }}></div>}

@@ -73,7 +73,7 @@ html,body,#root{
     border-radius: 10px;
 }
 
-.input-field input:focus ~ label{
+.input-field input:focus ~ label,.input-field .filled-label{
     top : 0;
     left: 30px;
     background-color: rgb(255, 255, 255);
@@ -102,4 +102,6 @@ html,body,#root{
     text-align: right;
     color: rgb(168, 19, 19);
 }
-
+.input-field-container{
+    padding: 15px 0;
+}
