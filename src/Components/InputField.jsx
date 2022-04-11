@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputField = () => {
+const InputField = ({type="text",label,icon=null,error=null}) => {
   return (
     <div className='input-field-container'>
         <div className="input-field">

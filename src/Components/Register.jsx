@@ -1,4 +1,5 @@
 import "./register.css"
+import RegisterForm from "./RegisterForm"
 
 const Register = () => {
   return (

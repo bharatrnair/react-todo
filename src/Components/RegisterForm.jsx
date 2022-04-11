@@ -1,8 +1,11 @@
 import React from 'react'
+import InputField from './InputField'
 
 const RegisterForm = () => {
   return (
-    <form>RegisterForm</form>
+    <form>
+        <InputField label={"Organization Name"}/>
+    </form>
   )
 }
 
