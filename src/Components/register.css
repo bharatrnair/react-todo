@@ -23,7 +23,6 @@ html,body,#root{
     position: relative;
 }
 .form-section{
-    background-color: blue;
     height: 100%;
 }
 .illustration-section{
@@ -59,19 +58,25 @@ html,body,#root{
     left: 40px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: white;
+    background-color: rgb(235, 241, 241) ;
     padding: 0 5px;
     transition: 0.2s ease-in-out;
+    color: #555;
+    pointer-events: none;
 }
 
 .input-field input{
     width: 100%;
     padding: 10px 10px 10px 40px;
+    border: none;
+    background-color: rgb(235, 241, 241);
+    border-radius: 10px;
 }
 
 .input-field input:focus ~ label{
     top : 0;
-    left: 25px;
+    left: 30px;
+    background-color: rgb(255, 255, 255);
 }
 
 
