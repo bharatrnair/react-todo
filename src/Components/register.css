@@ -56,12 +56,34 @@ html,body,#root{
 }
 .input-field label{
     position: absolute;
-    left: 50px;
+    left: 40px;
     top: 50%;
     transform: translateY(-50%);
+    background-color: white;
+    padding: 0 5px;
+    transition: 0.2s ease-in-out;
 }
 
 .input-field input{
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 10px 40px;
 }
+
+.input-field input:focus ~ label{
+    top : 0;
+    left: 25px;
+}
+
+
+.input-field-icon{
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    left: 10px;
+}
+

@@ -4,8 +4,8 @@ const InputField = ({type="text",label,icon=null,error=null}) => {
   return (
     <div className='input-field-container'>
         <div className="input-field">
-            <label>{label}</label>
             <input type={type} />
+            <label>{label}</label>
             { icon && <div className='input-field-icon' style={{
                 backgroundImage: `url(${icon})`,
             }}></div>}
