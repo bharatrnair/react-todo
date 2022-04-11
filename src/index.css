@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  ;
 }
 body {
   margin: 0;
@@ -21,7 +22,7 @@ code {
   color:red;
 }
 .inputBox{
-  padding : 20px;
+  padding : 10px;
    padding-left: 120px; 
 }
 .leftSection{
@@ -76,4 +77,22 @@ margin-left: 450px;
 .mainBody{
   background-color: #20716A;
   height: 100%;
+
+}
+body{
+  margin: 0;
+}
+.line{
+  height: 533px;
+width: 2px;
+left: 704px;
+top: 70px;
+border-radius: 6px;
+position: absolute;
+background: #ffffff;
+box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+border-radius: 6px;
+
+
+
 }

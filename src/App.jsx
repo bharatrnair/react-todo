@@ -9,6 +9,7 @@ import Layout from "./Components/Layout";
 import Todo from "./Components/Todo";
 import Todotrial from "./Components/Todotrial";
 import Icc from "./Components/Icc";
+import Register from "./Components/Register";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path ="todo"   element={<Todo/>} />
                 <Route path ="todotrial"  element={<Todotrial/>} />
                 <Route path ="icc" element={<Icc/>} />
+                <Route path ="register" element={<Register/>} />
             </Route>
             </Routes>
         )

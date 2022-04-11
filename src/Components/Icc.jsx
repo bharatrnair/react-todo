@@ -23,6 +23,7 @@ const Icc = () => {
             </button>
         </div>
         </div>
+        <div className="line"></div>
             
         <div className="rightSection">
             <img src={image}alt="" />
