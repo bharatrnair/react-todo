@@ -80,7 +80,7 @@ html,body,#root{
 }
 
 
-.input-field-icon{
+.input-field-icon,.input-field-info-icon{
     width: 20px;
     height: 20px;
     background-size: contain;
@@ -90,5 +90,12 @@ html,body,#root{
     position: absolute;
     transform: translateY(-50%);
     left: 10px;
+}
+
+.input-field-info-icon{
+   background-image: url(../Assets/svg/info.svg);
+   left:unset;
+   right: 10px;
+   cursor: pointer;
 }
 

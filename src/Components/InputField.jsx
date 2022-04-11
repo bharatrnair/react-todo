@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputField = ({type="text",label,icon=null,error=null}) => {
+const InputField = ({type="text",label,icon=null,error=null,info=null}) => {
   return (
     <div className='input-field-container'>
         <div className="input-field">
@@ -9,6 +9,8 @@ const InputField = ({type="text",label,icon=null,error=null}) => {
             { icon && <div className='input-field-icon' style={{
                 backgroundImage: `url(${icon})`,
             }}></div>}
+            {info && <div className="input-field-info-icon" title={info}>
+                </div>}
         </div>
             
         
