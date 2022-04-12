@@ -1,6 +1,7 @@
 import React from 'react'
 
-const InputField = ({type="text", 
+const InputField = ({
+type="text", 
 label,
 icon=null,
 error=null,
@@ -10,12 +11,17 @@ onChange
 }) => {
   return (
     <div className='input-field-container'>
-        <div className="input-field">
-            <input
+        <div className={`input-field ${type === "textarea"?"textarea-field":""}`}>
+           {type === "textarea"?
+            <textarea
+                 value={value}
+                 onChange={(e)=>onChange(e.target.value,e)}
+                 />
+            :<input
              type={type} 
              value={value} 
              onChange={(e)=>onChange(e.target.value,e)}
-              />
+              />}
              {/* <input type={type} /> */}
             <label className={value?"filled-label":""}>{label}</label>
             { icon && <div className='input-field-icon' style={{

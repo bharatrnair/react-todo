@@ -8,7 +8,8 @@ import StateIcon from '../Assets/svg/state.svg'
 import CityIcon from  '../Assets/svg/city.svg'
 import PinCodeIcon from '../Assets/svg/pincode.svg'
 import addressIcon from'../Assets/svg/address.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import SelectBox from './SelectBox'
 
 const RegisterForm = () => {
     const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ const RegisterForm = () => {
        pinCode:"",
        address:"",
     });
+    const[stateList, setStateList] = useState([]);
     const {orgName, employerName, email, phone, state, city, pinCode, address}=formData;
     
     const onChange = (key,value) => {
@@ -30,6 +32,14 @@ const RegisterForm = () => {
 
         });
     } 
+
+    useEffect(() => {
+      fetch("http://192.168.1.48:5000/utils/state-list")
+      .then(res => res.json())
+      .then(response => {
+         setStateList(response.data.map(({name})=>name));
+      })
+    }, [])
 return (
     <form>
         <InputField label={"Organization Name"} 
@@ -60,10 +70,11 @@ return (
         value={phone}
         onChange={(value)=>onChange("phone",value)}
         />
-        <InputField label={"State"} 
+        <SelectBox 
+        label={"State"} 
         icon={StateIcon}
-        info="State as per Records"
         error=""
+        options={stateList}
         value={state}
         onChange={(value)=>onChange("state",value)}
         />
@@ -82,6 +93,7 @@ return (
         onChange={(value)=>onChange("pinCode",value)}
         />
           <InputField label={"Address"} 
+        type="textarea"
         icon={addressIcon}
         info="Address as per Records"
         error=""

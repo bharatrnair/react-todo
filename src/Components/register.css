@@ -13,6 +13,7 @@ html,body,#root{
     padding: 40px 0 0 40px;
 
 }
+
 .register-container main{
     height: 100%;
     background-color: white;
@@ -24,6 +25,7 @@ html,body,#root{
 }
 .form-section{
     height: 100%;
+    overflow: auto;
 }
 .illustration-section{
 
@@ -64,8 +66,13 @@ html,body,#root{
     color: #555;
     pointer-events: none;
 }
+.textarea-field label{
+    top: 25px;
+}
 
-.input-field input{
+.input-field input,
+ .input-field textarea,
+ .input-field select{
     width: 100%;
     padding: 10px 10px 10px 40px;
     border: none;
@@ -73,7 +80,14 @@ html,body,#root{
     border-radius: 10px;
 }
 
-.input-field input:focus ~ label,.input-field .filled-label{
+.input-field textarea{
+    height:120px;
+    resize: none;
+}
+
+.input-field input:focus ~ label,
+.input-field textarea:focus ~ label,
+.input-field .filled-label{
     top : 0;
     left: 30px;
     background-color: rgb(255, 255, 255);
@@ -103,5 +117,9 @@ html,body,#root{
     color: rgb(168, 19, 19);
 }
 .input-field-container{
-    padding: 15px 0;
+    padding: 15px ;
+}
+
+.textarea-field .input-field-icon,.textarea-field .input-field-info-icon{
+    top: 25px;
 }
