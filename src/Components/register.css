@@ -123,3 +123,18 @@ html,body,#root{
 .textarea-field .input-field-icon,.textarea-field .input-field-info-icon{
     top: 25px;
 }
+.button-container{
+    text-align: right;
+}
+.button-container button{
+    background-color: #20716A;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.form-section::-webkit-scrollbar{
+    display: none;
+}
