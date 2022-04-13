@@ -1,14 +1,21 @@
 import {useState} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 
 const Todo = () => {
     const [userName,setUserName] = useState('');
-    const [todoList,setTodoList] = useState([]);
+    // const [todoList,setTodoList] = useState([]);
+    const todoList = useSelector(state => state.todo);
+    const dispatch = useDispatch();
     const [todo,setTodo] = useState('');
     const loadData = () => {
         fetch(`http://192.168.1.48:8086/todos/${userName}`)
         .then(res => res.json())
         .then(data => {
-            setTodoList(data.todos);
+            dispatch({
+                type: 'SET_TODO',
+                todo: data.todos,
+            })
+            
         }).catch(err =>{
             alert("Invalid user name");
         });
@@ -40,6 +47,7 @@ const Todo = () => {
     }
 
     const updateData = (data) =>{
+        console.log(data)
         fetch(`http://192.168.1.48:8086/todos`,{
             method:'POST',
             headers:{
@@ -48,10 +56,13 @@ const Todo = () => {
             body:JSON.stringify(data)
           }).then(res => res.json())
             .then(data => {
-                setTodoList(data.todos);
-            })
+                dispatch({
+                    type: 'SET_TODO',
+                    todo: data.todos,
+            });
+        })
         }
-  return (
+  return(
     <div>
         <header>
             <input type="text" placeholder='user name' value={userName} onChange={(e)=>setUserName(e.target.value)}
