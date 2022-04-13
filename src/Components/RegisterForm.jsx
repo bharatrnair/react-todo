@@ -11,47 +11,32 @@ import addressIcon from'../Assets/svg/address.svg'
 import { useState, useEffect } from 'react'
 import SelectBox from './SelectBox'
 import Button from './Button'
+import { useDispatch, useSelector } from 'react-redux'
 
 const RegisterForm = () => {
-    const [formData, setFormData] = useState({
-       name: "",
-       employerName:"",
-       email:"",
-       phone:"",
-       state:"",
-       city:"",
-       postalCode:"",
-       address:"",
-    });
-
-    const [FormDataError, setFormDataError] = useState({
-        name: "",
-        employerName:"",
-        email:"",
-        phone:"",
-        state:"",
-        city:"",
-        postalCode:"",
-        address:"",
-     });
-
+  const formData = useSelector((state) => state.orgDetails);
+  const dispatch = useDispatch();
+  const FormDataError = useSelector((state) => state.orgDetailsError);
     const[stateList, setStateList] = useState([]);
     const[cityList, setCityList] = useState([]);
     const {name, employerName, email, phone, state, city, postalCode, address}=formData;
     
     const onChange = (key,value) => {
-        setFormData({
-            ...formData,
-            [key]: value
+      dispatch({
+          type: 'SET_ORG_DETAILS',
+          key,
+          value
 
-        });
+
+      });
     } 
 
     const onChangeError = (key,value) => {
-        setFormDataError(prev=>({
-            ...prev,
-            [key]: value
-        }));
+      dispatch({
+        type: 'SET_ORG_DETAILS_ERROR',
+        key,
+        value
+        });
       }
 
     useEffect(() => {
@@ -74,6 +59,9 @@ const RegisterForm = () => {
 
   const formSubmit = async(e)=>{
     e.preventDefault();
+    dispatch({
+      type: "RESET_ORG_DETAILS_ERROR",
+    })
 
     try{
       const result = await fetch("http://192.168.1.48:5000/organization/register",{
